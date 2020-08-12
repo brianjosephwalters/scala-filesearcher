@@ -4,12 +4,23 @@ import java.io.File
 
 import scala.annotation.tailrec
 
+/**
+ * This is the main entry point for checking the file system against the supplied parameters
+ * @param filter  The filter that will be used to match against the file names.
+ * @param rootLocation  The starting location to search.
+ * @param checkSubFolders A boolean denoting whether or not to search subfolders.
+ * @param contentFilter A filter used to match against file content.
+ */
 class Matcher(filter: String,
               val rootLocation: String = new File(".").getCanonicalPath(),
               checkSubFolders: Boolean = false,
               contentFilter: Option[String] = None) {
   val rootIOObject = FileConverter.convertToIOObject(new File(rootLocation))
 
+  /**
+   * This searches for files which match the supplied parameters.
+   * @return A list of filenames and content match count pairs.
+   */
   def execute() = {
 
     @tailrec

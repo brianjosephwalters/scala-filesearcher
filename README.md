@@ -132,5 +132,23 @@ You can use Java .io FileWriter/PrintWriter patterns.
 String interpolation: If a string is preceded by an `s`, then we can use any scoped variable within hte string using `$`.
 
 ### Module 4: Wrapping Up
+
 #### Creating a Scale console application
+Create a "runner" object that extends App.
+An `args` variable is exposed.  
+Uses matcher tuples to handle ordered of the parameters.
+    *  use _* to say "any thing after this"
+
+#### Documentation
+sbt comes with `doc` command to create documentation.
+You can use java doc styles to create more detailed documentation.
+`/**` signifies to sbd doc task that these comments should be in the final docs.
+
+#### Map
+Basic component of Scala
+Analogous to a dictionary for key-value storage.
+`key -> value`
+`dict(key)`
+`dict.contains(key)`
+`dict.getOrElse(key, "No value found")`
 
